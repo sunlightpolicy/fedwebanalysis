@@ -14,8 +14,8 @@ It is recommended reaching the EC2 instances via Putty and FileZilla.
 
 ## Computing EC2
 
-* Contains domain specific scraping Python programs
-* Contains term finding Python program adapted highly from [Eric Nost's EDGI controlf.py](https://github.com/ericnost/EDGI)
+* Contains domain specific scraping Python programs, which obtain all the URLs on a federal domains' sitemap
+* Contains term finding Python program adapted highly from [Eric Nost's EDGI controlf.py](https://github.com/ericnost/EDGI), which counts the usage of a file of terms over a set of urls
 * Contains term aggregating Python program conceptually adapted from [Eric Nost's EDGI termcount.R](https://github.com/ericnost/EDGI)
 * Contains web_monitoring folder with two files `internetarchive.py` and `utils.py` taken from [a component of EDGI's Web Monitoring Project](https://github.com/edgi-govdata-archiving/web-monitoring-processing)
 * Contains bash files for running each Python program
