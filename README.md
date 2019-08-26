@@ -6,10 +6,10 @@ It is recommended reaching the EC2 instances via Putty and FileZilla.
 
 ## Flask EC2
 
-* Contains `templates`, with HTML files of the website.
-* Contains `static`, with CSS file of the website.
+* Contains `templates` folder, with HTML files of the website.
+* Contains `static` folder, with CSS file of the website.
 * Contains an   `uploads` folder.
-* Contains your access `.pem` file for the second instance inside your `.ssh` folder
+* Contains your access `.pem` file for the computing instance inside your `.ssh` folder
 * Contains `app.py`, `helpers.py`, and `client_secrets.json` file (from your Google OAuth access)
 
 ## Computing EC2
@@ -19,3 +19,4 @@ It is recommended reaching the EC2 instances via Putty and FileZilla.
 * Contains term aggregating Python program conceptually adapted from [Eric Nost's EDGI termcount.R](https://github.com/ericnost/EDGI)
 * Contains web_monitoring folder with two files `internetarchive.py` and `utils.py` taken from [a component of EDGI's Web Monitoring Project](https://github.com/edgi-govdata-archiving/web-monitoring-processing)
 * Contains bash files for running each Python program
+* Contains your access `.pem` file for the Flask instance inside your `.ssh` folder
