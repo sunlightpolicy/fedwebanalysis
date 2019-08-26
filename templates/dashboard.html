@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+<!--https://web.itu.edu.tr/uyar/fad/forms.html#posting-data-->
+
+	<h2>DASHBOARD: Run Programs and Upload Files</h2>
+
+	<hr/>
+
+	<h4 style="background-color:#007bff;color:#ffffff;">DOMAINS: Analyze Particular Domains</h4>
+	
+	<form method="POST">
+	
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-primary active">
+				<input type="radio" name="options" id="scrape_url" value="scrape_url" autocomplete="off" checked> URLS COLLECT
+			</label>
+			<label class="btn btn-primary">
+				<input type="radio" name="options" id="controlf" value="controlf" autocomplete="off"> FIND TERMS
+			</label>
+			<label class="btn btn-primary">
+				<input type="radio" name="options" id="term_count" value="term_count" autocomplete="off"> COMPARE TERMS
+			</label>
+		</div>
+		
+		<hr/>
+
+		<h6 style="color:#007bff;"><span style="font-weight:bold;">DATES: NOTE END DATES ARE NON-INCLUSIVE</span>, SO TO CAPTURE 2/19 END AT 2/20</h6>
+		<div class="row">
+			<div class="table-responsive col-md-6">
+				<p style="color:#007bff;">START</p>
+				<input style="color:#007bff;" type="date" id="start_date" name="date_start" value="2016-01-01">
+			</div>
+			<div class="table-responsive col-md-6">
+				<p style="color:#007bff;">END</p>
+				<input style="color:#007bff;" type="date" id="end_date" name="date_end" value="2017-01-20">
+			</div>
+		</div>
+		
+		<hr/>
+		
+		<h6 style="color:#007bff;"><span style="font-weight:bold;">TERM COUNT PARAMETERS</span>, ON means YES</h6>
+		<div class="row">
+			<div class="table-responsive col-md-6">
+				<p style="color:#007bff;">COUNT TERM FOR EACH CAPTURE WAYBACK FINDS?</p>
+				<label class="switch" id="count_all_last_option">
+					<input type="checkbox" name="count_all_last_option" value="on">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<div class="table-responsive col-md-6">
+				<p style="color:#007bff;">CAPTURE URLS TO WAYBACK WHILE GOING THRU LIST?<br>Sensical for earlier range</p>
+				<label class="switch" id="capture_option">
+					<input type="checkbox" name="capture_option" value="on">
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</div>
+
+		<hr/>
+		
+		
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="cbp">CBP</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="cms">CMS</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="dhs">DHS</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="drugabuse">DRUG ABUSE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="fda">FDA</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="fema">FEMA</button>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="healthcare">HEALTHCARE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="hhs">HHS</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="ice">ICE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="ihs">IHS</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="justice">JUSTICE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="marketplace.cms">MARKETPLACE</button>
+						</td>
+					</tr>
+					<tr>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="medicaid">MEDICAID</button>
+						</th>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="medicare">MEDICARE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="state">STATE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="treasury">TREASURY</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="usa">USA</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="uscis">USCIS</button>
+						</td>
+					</tr>
+					<tr>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="va">VA</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="whitehouse">WHITEHOUSE</button>
+						</td>
+						<td scope="col">
+							<button class="btn btn-sm btn-primary" type="submit" name="submit_button" value="womenshealth">WOMEN'S HEALTH</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<hr/>
+	
+	</form>
+	
+	<h4 style="background-color:#17a2b8;color:#ffffff;">CAPTURE: Select a list of urls to capture on Internet Archive</h4>
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td scope="col">
+						<form method="post">
+							<input type="hidden" name="submit_button" value="trinberg"/>
+							<button class="btn btn-sm btn-info" type="submit">TRINBERG ACCT</button>
+						</form>
+					</td>
+					<td scope="col">
+						<form method="post">
+							<input type="hidden" name="submit_button" value="rbergman"/>
+							<button class="btn btn-sm btn-info" type="submit">RBERGMAN ACCT</button>
+						</form>
+					</td>
+					<td scope="col">
+						<form method="post" enctype="multipart/form-data">
+							<input type="file" name="file"/>
+							<input type="hidden" name="submit_button" value="customupload"/>
+							<button class="btn btn-outline-info" type="submit">CUSTOM UPLOAD</button>
+						</form>
+					</td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	
+	<hr/>
+	
+	<h4 style="background-color:#6c757d;color:#ffffff;">UPLOAD: Add files from your computer to Drive?</h4>
+	<form method="post" enctype="multipart/form-data">
+		<input type="file" name="file"/>
+		<input type="hidden" name="submit_button" value="upload"/>
+		<button class="btn btn-outline-secondary" type="submit">UPLOAD</button>
+    </form>
+
+{% endblock %}

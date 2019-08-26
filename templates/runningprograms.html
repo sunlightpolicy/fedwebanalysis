@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Running
+{% endblock %}
+
+{% block main %}
+	<h2>RUNNING: Terminate Undesired Programs</h2>
+
+	<hr/>
+
+	<div class="row">
+		<div class="table-responsive col-md-6">
+			<table class="table table-bordered">
+				<thead class="thead-light">
+					<tr>
+						<th colspan="2">ATTACHED (RUNNING AND OPEN)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for attach in attached %}
+						<tr>
+							<td scope="row">{{attach}}</td>
+							<td>
+								<form method="post">
+									<input type="hidden" name="submit_button" value="{{attach}}"/>
+									<button class="btn btn-sm btn-primary" type="submit">KILL</button>
+								</form>
+							</td>
+						</tr>				
+					{% endfor %}	
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive col-md-6">
+			<table class="table table-bordered">
+				<thead class="thead-light">
+					<tr>
+						<th colspan="2">DETACHED (RUNNING OR ENDED)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for detach in detached %}
+						<tr>
+							<td scope="row">{{ detach }}</td>
+							<td>
+								<form method="post">
+									<input type="hidden" name="submit_button" value="{{detach}}"/>
+									<button class="btn btn-sm btn-primary" type="submit">KILL</button>
+								</form>
+							</td>
+						</tr>				
+					{% endfor %}	
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- documentation at http://getbootstrap.com/docs/4.0/, alternative themes at https://bootswatch.com/4-alpha/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+		
+		<link href="/static/styles.css" rel="stylesheet"/>
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		
+		<title>Sunlight: {% block title %}{% endblock %}</title>
+	</head>
+
+
+	<body>
+		
+		<nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="/"><span class="red">S</span><span class="orange">U</span><span class="yellow">N</span><span class="green">L</span><span class="blue">I</span><span class="indigo">G</span><span class="purple">H</span><span class="red">T</span> <span class="orange">W</span><span class="yellow">I</span><span class="green">P</span><span class="blue">!</span><span class="indigo">!</span><span class="purple">!</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+						<li class="nav-item"><a class="nav-link" href="/runningprograms">RUNNING</a></li>
+                    </ul>
+					<ul class="navbar-nav mr-auto mt-2">
+						<li class="nav-item"><a class="nav-link" href="https://drive.google.com/drive/u/3/my-drive" target="_blank">Drive</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+						<li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+		</nav>
+		
+		<main class="container p-5">
+            {% block main %}{% endblock %}
+		</main>	
+	
+	</body>	
+
+</html>
