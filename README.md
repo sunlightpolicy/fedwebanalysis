@@ -10,7 +10,7 @@ It is recommended reaching the EC2 instances via Putty and FileZilla.
 * Contains `static` folder, with CSS file of the website.
 * Contains an   `uploads` folder.
 * Contains your access `.pem` file for the computing instance inside your `.ssh` folder
-* Contains `app.py`, `helpers.py`, and `client_secrets.json` file (from your Google OAuth access)
+* Contains `app.py`, `helpers.py`, `client_secrets.json` file (from your Google OAuth access), and optionally a `settings.yaml` file
 
 ## Computing EC2
 
